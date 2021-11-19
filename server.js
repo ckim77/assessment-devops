@@ -15,6 +15,17 @@ app.get('/api/robots', (req, res) => {
     }
 })
 
+// serve static files
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "../assessment-qa-devops/public/index.html"));
+  });
+
+app.use("/styles", express.static(path.join(__dirname, "../assessment-qa-devops/public/index.css")));
+
+app.use("/js", express.static(path.join(__dirname, "../assessment-qa-devops/public/index.js")));
+
+
+
 app.get('/api/robots/five', (req, res) => {
     try {
         let shuffled = shuffleArray(bots)
