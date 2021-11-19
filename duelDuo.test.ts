@@ -28,7 +28,7 @@ test("choices appear after clicking draw", async () => {
     expect(shown).toBe(true)
 })
 
-test ("added bots appear after clicking add bot", async () => {
-    await driver.findElement(By.xpath("//a[@class = 'bot-btn']")).click()
-    await driver.sleep (2000)
-})
+// test ("added bots appear after clicking add bot", async () => {
+//     await driver.findElement(By.xpath("//a[@class = 'bot-btn']")).click()
+//     await driver.sleep (2000)
+// })
