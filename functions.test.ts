@@ -12,5 +12,19 @@ describe('shuffleArray should', () => {
         expect(shuffleArray(arr)).toContain(1)
     })
 
+    // review tests
+
+    test ("make sure function returns an array", () => {
+        expect(Array.isArray(shuffleArray(arr))).toBe(true);
+    })
+
+    test ("make sure that both arrays contain the same values", () => {
+        expect(shuffleArray(arr)).toEqual(expect.arrayContaining(arr))
+    })
+
+    test ("make sure the items have been shuffled", () => {
+        expect(shuffleArray(arr).join()).not.toEqual(arr.join());
+    })
+
 })
 
