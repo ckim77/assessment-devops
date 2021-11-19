@@ -16,7 +16,7 @@ afterAll(async () => {
 test('Title shows up when page loads', async () => {
     const title = await driver.findElement(By.id('title'))
     const displayed = await title.isDisplayed()
-    await driver.sleep (2000)
+    await driver.sleep (1000)
     expect(displayed).toBe(true)
 })
 
@@ -28,7 +28,7 @@ test("choices appear after clicking draw", async () => {
     expect(shown).toBe(true)
 })
 
-// test ("added bots appear after clicking add bot", async () => {
-//     await driver.findElement(By.xpath("//a[@class = 'bot-btn']")).click()
-//     await driver.sleep (2000)
-// })
+test ("added bots appear after clicking add bot", async () => {
+    await driver.findElement(By.xpath("(//a[@className = 'bot-btn'])"))
+    await driver.sleep (2000)
+})
