@@ -89,6 +89,11 @@ app.get('/api/player', (req, res) => {
     }
 })
 
+rollbar.critical("Connection error");
+rollbar.error("Some unexpected condition has occurred, please try again");
+rollbar.warning("Connection error");
+rollbar.info("You have accessed the site");
+
 const port = process.env.PORT || 3000
 
 app.listen(port, () => {
