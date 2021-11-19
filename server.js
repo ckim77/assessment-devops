@@ -6,6 +6,17 @@ const {shuffleArray} = require('./utils')
 
 app.use(express.json())
 
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: 'f99df81ba51f484194cd60e5993061f5',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
+
+// record a generic message and send it to Rollbar
+rollbar.log('Hello world!')
+
+
 app.get('/api/robots', (req, res) => {
     try {
         res.status(200).send(botsArr)
